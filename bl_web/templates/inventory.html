@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+  <center>
+    <h1>Entire Inventory</h1>
+    <table id="PartsTable" class="sortable">
+      <thead> 
+        <tr>
+          <th>Condition</th>
+          <th>Part #</th>
+          <th>Name</th>
+          <th>Color</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      {% for item in inv %}
+        <tr>
+          <td style="border: 1px solid black;"align="center">{{ item.new_or_used }}</td>
+          <td style="border: 1px solid black;">{{ item.part_num }}</td>
+          <td style="border: 1px solid black;">{{ item.part_name }}</td>
+          <td style="border: 1px solid black;"align="center">{{ item.color_name }}</td>
+          <td style="border: 1px solid black;"align="center">{{ item.quantity }}</td>
+          <td style="border: 1px solid black;"align="center">{{ item.unit_price }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </center>
+{% endblock content %}

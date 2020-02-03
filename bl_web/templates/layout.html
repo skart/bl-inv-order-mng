@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Bricklink Seller</title>
+	<link href="{{ url_for('static', filename='layout.css') }}" rel="stylesheet" type="text/css" media="screen" />
+	<script src="{{ url_for('static', filename='sortable.js') }}" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="/">Bricking</a></h1>
+				<p></p>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><a href="/">Home</a></li>
+					<li><a href="/inventory">Inventory</a></li>
+					<li><a href="#">Orders</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+</div>
+</body>
+</html>

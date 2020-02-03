@@ -1,0 +1,11 @@
+*.log
+.idea
+.env*
+*.pyc
+*.json
+__pycache__
+.DS_Store
+.txt
+config.py
+*.db
+test*
