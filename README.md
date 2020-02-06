@@ -8,7 +8,7 @@ Add, Update, and Delete inventory items. View Inventory by drawer.
 Organized view, process and update orders.
 
 ## Setup
-## Dependencies
+### Dependencies
 Building and running the application requires the following:
 - An installation of `Python 3`
 - An installation of `pip` for `Python 3`
@@ -27,7 +27,8 @@ cp config.py.shadow config.py
 vim config.py
 ```
 ### Database 
-`python db_setup.py`
+1. Go to bl_web directory
+2. `python db_setup.py`
 The script can take several minutes for to import a large inventory
 
 ### To Do
