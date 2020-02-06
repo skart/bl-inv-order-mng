@@ -3,7 +3,7 @@ from config import *
 import urllib
 import json
 
-class BLClient:
+class ApiClient:
     def __init__(self):
         self.service = OAuth1Service(name='bricklink',
                                      consumer_key=CONSUMER_KEY,

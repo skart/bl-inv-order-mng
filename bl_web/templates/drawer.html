@@ -2,26 +2,31 @@
 {% block content %}
   <center>
     <h1>{{ drawer_name }}</h1>
-    <table id="PartsTable" class="sortable">
-      <thead> 
-        <tr>
-          <th>Condition</th>
-          <th>Part #</th>
-          <th>Name</th>
-          <th>Color</th>
-          <th>Quantity</th>
-          <th>Price</th>
+    <table style="height: 139px; width: 570px; margin-left: auto; margin-right: auto;" border="2" cellpadding="5" cellspacing="1">
+      {% for item in inv %}>
+        <tr style="height: 139px;">
+          <td style="width: 81px; height: 139px;">
+            <img src="{{ item.image_url }}">
+          </td>
+          <td style="width: 262px; height: 139px;">
+            <b>{{ item.part_num }}</b><br> 
+            {{ item.color_name }} {{ item.part_name }}<br> 
+            <textarea rows="3" cols="29">{{ item.description }}</textarea><br> 
+            <input type="TEXT" size="25" value="{{ item.remarks }}">
+          </td>
+          <td style="width: 76px; height: 139px;">
+            <b>Qty:</b><br> 
+            <input type="TEXT" size="5" value="{{ item.quantity }}"><br>
+            <b>Price:</b><br>
+            <input type="TEXT" size="5" value="{{ item.unit_price }}"><br>
+            <b>Condition:</b><br> 
+            <input type="TEXT" size="5" value="{{ item.new_or_used }}">
+          </td>
+          <td style="height: 139px;">
+            <input type="CHECKBOX">Stockroom<br>
+            <input type="CHECKBOX">Delete</td>
         </tr>
-      </thead>
-      {% for item in inv %}
-        <tr>
-          <td style="border: 1px solid black;"align="center">{{ item.new_or_used }}</td>
-          <td style="border: 1px solid black;">{{ item.part_num }}</td>
-          <td style="border: 1px solid black;">{{ item.part_name }}</td>
-          <td style="border: 1px solid black;"align="center">{{ item.color_name }}</td>
-          <td style="border: 1px solid black;"align="center">{{ item.quantity }}</td>
-          <td style="border: 1px solid black;"align="center">{{ item.unit_price }}</td>
-        </tr>
+
       {% endfor %}
     </table>
   </center>

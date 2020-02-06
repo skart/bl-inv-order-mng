@@ -27,12 +27,10 @@ cp config.py.shadow config.py
 vim config.py
 ```
 ### Database 
-1. Navigate to the db_setup directory
-2. Run each script in order
+`python db_setup.py`
+The script can take several minutes for to import a large inventory
 
 ### To Do
-* Part images
-* Item redesign for drawer.html
 * Update Item in Drawer
 ** Send update to Bricklink
 * Delete item in drawer

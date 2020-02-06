@@ -1,4 +1,5 @@
 from bl_web import db
+from datetime import datetime
 
 class Inventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -15,6 +16,9 @@ class Inventory(db.Model):
     description = db.Column(db.Text)
     remarks = db.Column(db.String(20), nullable=False)
     is_stock_room = db.Column(db.Boolean, nullable=False, default=False)
+    image_url= db.Column(db.String(100))
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, nullable=True, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     def __repr__(self):
-        return f"Inventory('{self.id}', '{self.inventory_id}','{self.part_num}', '{self.part_name}', '{self.part_type}', '{self.category_id}', '{self.color_id}', '{self.color_name}', '{self.quantity}', '{self.new_or_used}', '{self.unit_price}', '{self.description}', '{self.remarks}', '{self.is_stock_room}')"
+        return f"Inventory('{self.id}', '{self.inventory_id}','{self.part_num}', '{self.part_name}', '{self.part_type}', '{self.category_id}', '{self.color_id}', '{self.color_name}', '{self.quantity}', '{self.new_or_used}', '{self.unit_price}', '{self.description}', '{self.remarks}', '{self.is_stock_room}', '{self.image_url}', '{self.created_at}', '{self.updated_at}')"
