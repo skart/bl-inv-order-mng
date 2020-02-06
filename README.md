@@ -31,7 +31,7 @@ vim config.py
 2. `python db_setup.py`
 The script can take several minutes for to import a large inventory
 
-### To Do
+## To Do
 * Update Item in Drawer
 ** Send update to Bricklink
 * Delete item in drawer
