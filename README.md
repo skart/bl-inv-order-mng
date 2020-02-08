@@ -39,6 +39,9 @@ The script can take several minutes for to import a large inventory
 * Add new item
 ** Error validation
 ** Send add to Bricklink
+* Orders on the homepage
+* Order page
+* More oder stuff
 
 #### Maybe...
 * Part Search with inventory results
