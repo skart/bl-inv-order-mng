@@ -22,3 +22,13 @@ class Inventory(db.Model):
 
     def __repr__(self):
         return f"Inventory('{self.id}', '{self.inventory_id}','{self.part_num}', '{self.part_name}', '{self.part_type}', '{self.category_id}', '{self.color_id}', '{self.color_name}', '{self.quantity}', '{self.new_or_used}', '{self.unit_price}', '{self.description}', '{self.remarks}', '{self.is_stock_room}', '{self.image_url}', '{self.created_at}', '{self.updated_at}')"
+
+class Colors(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    color_id = db.Column(db.Integer, nullable=False) 
+    color_name = db.Column(db.String(20), nullable=False)
+    color_code = db.Column(db.String(10), nullable=False)
+    color_type = db.Column(db.String(15), nullable=False)
+
+    def __repr__(self):
+        return  f"Colors('{self.id}', '{self.color_id}', '{self.color_name}', '{self.color_code}', '{self.color_type}')"

@@ -9,7 +9,9 @@ sys.path.append(os.path.abspath('..'))
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
+client = ApiClient()
 
+############# Tables #############
 class Inventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     inventory_id = db.Column(db.Integer, nullable=False)
@@ -34,10 +36,20 @@ class Inventory(db.Model):
     def __repr__(self):
         return f"Inventory('{self.id}', '{self.inventory_id}','{self.part_num}', '{self.part_name}', '{self.part_type}', '{self.category_id}', '{self.color_id}', '{self.color_name}', '{self.quantity}', '{self.new_or_used}', '{self.unit_price}', '{self.description}', '{self.remarks}', '{self.is_stock_room}', '{self.image_url}', '{self.created_at}', '{self.updated_at}')"
 
+class Colors(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    color_id = db.Column(db.Integer, nullable=False) 
+    color_name = db.Column(db.String(20), nullable=False)
+    color_code = db.Column(db.String(10), nullable=False)
+    color_type = db.Column(db.String(15), nullable=False)
+
+    def __repr__(self):
+        return  f"Colors('{self.id}', '{self.color_id}', '{self.color_name}', '{self.color_code}', '{self.color_type}')"
+
 db.create_all()
 
+############# Populate Inventory Table #############
 # make api call, capture response
-client = ApiClient()
 response = client.get('inventories')
 
 # convert API reponse to database format
@@ -54,3 +66,15 @@ for x in response["data"]:
                        color_name=x["color_name"], quantity=x["quantity"], new_or_used=x["new_or_used"], unit_price=x["unit_price"], description=x["description"], remarks=x["remarks"], is_stock_room=x["is_stock_room"], image_url=img_url)
     db.session.add(record)
     db.session.commit()
+
+############# Populate Colors Table #############
+# make api call, capture response
+response = client.get("colors")
+
+# convert API reponse to database format
+for x in response["data"]:
+    if x["color_type"] != 'Modulex' and x["color_type"] != 'BrickArms': # not adding either part type from flask right now
+        # create record to add
+        record = Colors(color_id=x["color_id"], color_name=x["color_name"], color_code=x["color_code"], color_type=x["color_type"])
+        db.session.add(record)
+        db.session.commit()

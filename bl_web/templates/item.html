@@ -1,9 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
   <center>
-    <h1>{{ drawer_name }}</h1>
+    <h1>{{  item.part_name }}</h1>
     <table style="height: 139px; width: 570px; margin-left: auto; margin-right: auto;" border="2" cellpadding="5" cellspacing="1">
-      {% for item in inv %}
         <tr style="height: 139px;">
           <td style="width: 81px; height: 139px;">
             <img src="{{ item.image_url }}">
@@ -19,8 +18,7 @@
             <input type="TEXT" size="5" value="{{ item.quantity }}"><br>
             <b>Price:</b><br>
             <input type="TEXT" size="5" value="{{ item.unit_price }}"><br>
-            <b>Condition:</b><br> 
-            <input type="TEXT" size="5" value="{{ item.new_or_used }}">
+            <b>Condition: {{ item.new_or_used }}</b><br> 
           </td>
           <td style="height: 139px;">
             <input type="CHECKBOX">Stockroom<br>
@@ -30,7 +28,6 @@
           </td>
         </tr>
 
-      {% endfor %}
     </table>
   </center>
 {% endblock content %}
