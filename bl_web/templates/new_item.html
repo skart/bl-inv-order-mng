@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.part_type.label }} {{ form.part_type }}<br>
+    {{ form.part_num.label }} {{ form.part_num(size=15) }}<br>
+    {{ form.color_name.label }} {{ form.color_name }}<br>
+    {{ form.quantity.label }} {{ form.quantity(size=4) }}<br>
+    {{ form.new_or_used.label }} {{ form.new_or_used }}<br>
+    {{ form.unit_price.label }} {{ form.unit_price(size=6) }}<br>
+    {{ form.description.label }} {{ form.description(size=100) }}<br>
+    {{ form.remarks.label }} {{ form.remarks(size=15) }}<br>
+    {{ form.is_stock_room.label }} {{ form.is_stock_room }}<br>
+    {{ form.submit }}
+
+</form>
+{% if form.errors %}
+    {{ form.errors }}
+    {{ form.color_name.data }}
+{% endif %}
+{% endblock content %}

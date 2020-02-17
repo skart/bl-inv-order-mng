@@ -32,17 +32,23 @@ vim config.py
 The script can take several minutes for to import a large inventory
 
 ## To Do
-* Update Item in Drawer
-** Send update to Bricklink
-* Delete item in drawer
-** Send delete to Bricklink
-* Add new item
-** Error validation
-** Send add to Bricklink
+### Inventory
+* Logic for update that includes a new color => get new image
+* Disable New/Used form field for on drawer page (just text)
+* Delete button on Inventory page
+* Delete confirmation modal for drawers
+* Delete confirmation modal for 
+* Update on page for drawers
+* Button to sync BL to DB
+
+### Orders
 * Orders on the homepage
 * Order page
-* More oder stuff
+* Update processed order
+* Update shipped order
+* Query USPS shipping for delivered status??
+* More order stuff...
 
 #### Maybe...
-* Part Search with inventory results
+* Auto search fields on Inventory page (dynamically update as chars are typed)
 

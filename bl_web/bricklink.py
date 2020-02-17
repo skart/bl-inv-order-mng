@@ -1,5 +1,6 @@
 from rauth import OAuth1Service
-from config import *
+from bl_web import app
+from bl_web.config import *
 import urllib
 import json
 
@@ -16,6 +17,8 @@ class ApiClient:
             response = self.session.request(method, url, True, '', data=json.dumps(params), headers={'Content-Type': 'application/json'}).json()
         else:
             response = self.session.request(method, url, True, '', params=params).json()
+        app.logger.info("REQUEST " + str(method) + ": " +str(url) + " : " + str(params))
+        app.logger.info("RESPONSE: " + str(response))
         return response
 
     def get(self, url, params={}):

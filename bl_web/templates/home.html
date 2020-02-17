@@ -4,7 +4,7 @@
 	<div  id="inv-drawer">
     	<ul>
 			{% for item in drawers %}
-				<li><a href="/drawer/{{ item.remarks }}">{{ item.remarks }}</a></li>
+				<li><a href="/drawer/{{ item.remarks }}" class="button">{{ item.remarks }}</a></li>
 			{% endfor %}
 		</ul>
 	</div>
