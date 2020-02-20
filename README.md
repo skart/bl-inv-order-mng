@@ -34,12 +34,10 @@ The script can take several minutes for to import a large inventory
 ## To Do
 ### Inventory
 * Logic for update that includes a new color => get new image
-* Disable New/Used form field for on drawer page (just text)
-* Delete button on Inventory page
-* Delete confirmation modal for drawers
-* Delete confirmation modal for 
 * Update on page for drawers
+* Update on page for item
 * Button to sync BL to DB
+* Sort Inventory by Category 
 
 ### Orders
 * Orders on the homepage
@@ -48,6 +46,9 @@ The script can take several minutes for to import a large inventory
 * Update shipped order
 * Query USPS shipping for delivered status??
 * More order stuff...
+
+### Overall
+* Nicer theme
 
 #### Maybe...
 * Auto search fields on Inventory page (dynamically update as chars are typed)
