@@ -16,11 +16,10 @@
           </td>
           <td style="width: 76px; height: 139px;">
             <b>Qty:</b><br> 
-            <input type="TEXT" size="5" value="{{ item.quantity }}"><br>
+            <input type="TEXT" size="5" value="{{ item.quantity }}"><br><br>
             <b>Price:</b><br>
-            <input type="TEXT" size="5" value="{{ item.unit_price }}"><br>
-            <b>Condition:</b><br> 
-            <input type="TEXT" size="5" value="{{ item.new_or_used }}">
+            <input type="TEXT" size="5" value="{{ item.unit_price }}"><br><br>
+            <b>Condition: {{ item.new_or_used }}</b><br> 
           </td>
           <td style="height: 139px;">
             <input type="CHECKBOX">Stockroom<br>
